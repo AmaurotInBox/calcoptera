@@ -1,59 +1,34 @@
+require('dotenv').config()
+
 const express = require('express')
-const { ApolloServer, gql } = require('apollo-server-express')
+
+const { ApolloServer } = require('apollo-server-express')
+
+const db = require('./db')
+const models = require('./models')
+const DB_HOST = process.env.DB_HOST
+const typeDefs = require('./schema')
+const resolvers = require('./resolvers')
 
 const PORT = process.env.PORT || 4000
 
-const notes = [
-  { id: '1', content: 'This is a note', author: 'Adam Scott' },
-  { id: '2', content: 'This is another note', author: 'Harlow Everly' },
-  { id: '3', content: 'Oh hey look, another note!', author: 'Riley Harrison' },
-]
-
-const typeDefs = gql`
-  type Query {
-    hello: String!
-    notes: [Note!]!
-    note(id: ID!): Note!
-  }
-  type Note {
-    id: ID!
-    content: String!
-    author: String!
-  }
-  type Mutation {
-    newNote(content: String!): Note!
-  }
-`
-const resolvers = {
-  Query: {
-    hello: () => 'Hello world!',
-    notes: () => notes,
-    note: (parent, args) => {
-      return notes.find((note) => note.id === args.id)
-    },
-  },
-  Mutation: {
-    newNote: (parent, args) => {
-      const noteValue = {
-        id: String(notes.length + 1),
-        content: args.content,
-        author: 'Adam Scott',
-      }
-      notes.push(noteValue)
-      return noteValue
-    },
-  },
-}
+db.connect(DB_HOST)
 
 async function startApolloServer(typeDefs, resolvers) {
-  const server = new ApolloServer({ typeDefs, resolvers })
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: () => {
+      return { models }
+    },
+  })
   const app = express()
   await server.start()
   server.applyMiddleware({ app, path: '/api' })
 
   app.listen(PORT, () => {
     console.log(
-      `Server is listening on port http://127.0.0.1:${PORT}${server.graphqlPath}`
+      `GraphQL Server running at http://127.0.0.1:${PORT}${server.graphqlPath}`
     )
   })
 }
