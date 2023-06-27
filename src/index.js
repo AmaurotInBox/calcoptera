@@ -1,8 +1,8 @@
 require('dotenv').config()
 
 const express = require('express')
-
 const { ApolloServer } = require('apollo-server-express')
+const jwt = require('jsonwebtoken')
 
 const db = require('./db')
 const models = require('./models')
@@ -14,12 +14,25 @@ const PORT = process.env.PORT || 4000
 
 db.connect(DB_HOST)
 
+const getUser = (token) => {
+  if (token) {
+    try {
+      return jwt.verify(token, process.env.JWT_SECRET)
+    } catch (err) {
+      throw new Error('Session invalid')
+    }
+  }
+}
+
 async function startApolloServer(typeDefs, resolvers) {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: () => {
-      return { models }
+    context: ({ req }) => {
+      const token = req.headers.authorization
+      const user = getUser(token)
+      console.log(user)
+      return { models, user }
     },
   })
   const app = express()
