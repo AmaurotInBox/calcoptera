@@ -31,7 +31,6 @@ async function startApolloServer(typeDefs, resolvers) {
     context: ({ req }) => {
       const token = req.headers.authorization
       const user = getUser(token)
-      console.log(user)
       return { models, user }
     },
   })
