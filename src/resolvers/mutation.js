@@ -106,7 +106,9 @@ module.exports = {
 
     if (isNoteFavorited) {
       return await models.Note.findOneAndUpdate(
-        id,
+        {
+          _id: id,
+        },
         {
           $pull: {
             favoritedBy: new mongoose.Types.ObjectId(user.id),
@@ -119,7 +121,9 @@ module.exports = {
       )
     } else {
       return await models.Note.findOneAndUpdate(
-        id,
+        {
+          _id: id,
+        },
         {
           $push: {
             favoritedBy: new mongoose.Types.ObjectId(user.id),
