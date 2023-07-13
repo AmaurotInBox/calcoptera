@@ -3,8 +3,11 @@ const { gql } = require('apollo-server-express')
 module.exports = gql`
   scalar DateTime
   type Query {
-    notes: [Note!]!
     note(id: ID!): Note!
+    notes: [Note!]!
+    user(username: String!): User!
+    users: [User!]!
+    me: User!
   }
   type Note {
     id: ID!
