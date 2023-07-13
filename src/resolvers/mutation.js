@@ -96,4 +96,40 @@ module.exports = {
 
     return jwt.sign({ id: user._id }, process.env.JWT_SECRET)
   },
+  toggleFavorite: async (parent, { id }, { models, user }) => {
+    if (!user) {
+      throw new AuthenticationError('You must be signed in to create a note')
+    }
+
+    const note = await models.Note.findById(id)
+    const isNoteFavorited = note.favoritedBy.includes(user.id)
+
+    if (isNoteFavorited) {
+      return await models.Note.findOneAndUpdate(
+        id,
+        {
+          $pull: {
+            favoritedBy: new mongoose.Types.ObjectId(user.id),
+          },
+          $inc: {
+            favoriteCount: -1,
+          },
+        },
+        { new: true }
+      )
+    } else {
+      return await models.Note.findOneAndUpdate(
+        id,
+        {
+          $push: {
+            favoritedBy: new mongoose.Types.ObjectId(user.id),
+          },
+          $inc: {
+            favoriteCount: 1,
+          },
+        },
+        { new: true }
+      )
+    }
+  },
 }
