@@ -1,3 +1,9 @@
-export function App() {
-  return <h1>Hello world?!</h1>
+import Pages from './pages'
+
+export default App = () => {
+  return (
+    <>
+      <Pages />
+    </>
+  )
 }
