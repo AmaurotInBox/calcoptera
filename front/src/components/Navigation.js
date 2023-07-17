@@ -11,6 +11,7 @@ const Nav = styled.nav`
     position: fixed;
     width: 220px;
     height: calc(100% - 64px);
+    overflow-y: auto;
   }
 `
 

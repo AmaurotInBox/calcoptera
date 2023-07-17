@@ -33,6 +33,7 @@ async function startApolloServer(typeDefs, resolvers) {
     typeDefs,
     resolvers,
     validationRules: [depthLimit(5), createComplexityLimitRule(1000)],
+    introspection: process.env.NODE_ENV !== 'production',
     context: ({ req }) => {
       const token = req.headers.authorization
       const user = getUser(token)
