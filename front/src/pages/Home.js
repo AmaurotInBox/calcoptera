@@ -1,8 +1,11 @@
+import React from 'react'
+import Button from '../components/Button'
+
 export default Home = () => {
   return (
     <>
       <h1>Hello world!</h1>
-      <p>Welcome to the application</p>
+      <Button>Click me!</Button>
     </>
   )
 }
