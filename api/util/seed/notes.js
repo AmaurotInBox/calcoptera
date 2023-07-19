@@ -1,6 +1,6 @@
 const faker = require('faker')
 const mongoose = require('mongoose')
-const fetch = require('node-fetch')
+// const fetch = require('node-fetch')
 
 const seedNotes = async (users) => {
   console.log('Seeding notes...')
@@ -8,17 +8,22 @@ const seedNotes = async (users) => {
 
   for (let i = 0; i < 25; i++) {
     const random = [Math.floor(Math.random() * users.length)]
-    let content
 
-    const response = await fetch(
-      'https://jaspervdj.be/lorem-markdownum/markdown.txt'
-    )
+    // <-- TODO TO UNCOMMENT THIS -->
+    // let content
+    // const response = await fetch(
+    //   'https://jaspervdj.be/lorem-markdownum/markdown.txt'
+    // )
+    // if (response.ok) {
+    //   content = await response.text()
+    // } else {
+    //   content = faker.lorem.paragraph()
+    // }
+    // </-- NEED TO UNCOMMENT THIS -->
 
-    if (response.ok) {
-      content = await response.text()
-    } else {
-      content = faker.lorem.paragraph()
-    }
+    // <-- TODO REMOVE THIS -->
+    const content = faker.lorem.paragraph()
+    // </-- AND REMOVE THIS -->
 
     const note = {
       content,

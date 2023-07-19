@@ -2,18 +2,22 @@
   "name": "front",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+    "build:parcel": "parcel build src/index.html",
+    "build": "npm run clean && npm run build:parcel",
+    "clean": "rm -rf dist/*"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@apollo/client": "^3.7.17",
+    "date-fns": "^2.30.0",
     "graphql": "^16.7.1",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.7",
     "react-router-dom": "^6.14.1",
     "styled-components": "^6.0.4"
   },
