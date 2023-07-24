@@ -6,6 +6,7 @@ import Home from './Home'
 import Notes from './Notes'
 import NotePage from './Note'
 import Favorites from './Favorites'
+import SingUp from './SingUp'
 import NoMatch from './NoMatch'
 
 export default Pages = () => {
@@ -17,6 +18,8 @@ export default Pages = () => {
           <Route path="notes" element={<Notes />} />
           <Route path="favorites" element={<Favorites />} />
           <Route path="note/:id" element={<NotePage />} />
+          <Route path="singup" element={<SingUp />} />
+
           <Route path="*" element={<NoMatch />} />
         </Route>
         <Route path="*" element={<ErrorLayout />}>
