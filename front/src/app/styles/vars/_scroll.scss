@@ -1,0 +1,22 @@
+@mixin vertical-scroll {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+    border-radius: 9999px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--icon-secondary-hover);
+  }
+}
+
+@mixin no-scroll {
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}

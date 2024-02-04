@@ -1,0 +1,46 @@
+// Ссылка на Figma
+// https://www.figma.com/file/PnbjU3YyW6Y3C1lDIBrFmO/GateRevisor-Lib?type=design&node-id=30-768&mode=design&t=UW9uqVwh52SZGXwv-0
+
+@mixin shadow-xs {
+  box-shadow: 0px 1px 2px 0px var(--shadow-xs);
+}
+
+@mixin shadow-s {
+  box-shadow:
+    0px 1px 3px 0px var(--shadow-s-1),
+    0px 1px 2px 0px var(--shadow-s-2);
+}
+
+@mixin shadow-m {
+  box-shadow:
+    0px 2px 4px -2px var(--shadow-m-1),
+    0px 4px 8px -2px var(--shadow-m-2);
+}
+
+@mixin shadow-l {
+  box-shadow:
+    0px 4px 6px -2px var(--shadow-l-1),
+    0px 12px 16px -4px var(--shadow-l-2);
+}
+
+@mixin shadow-xl {
+  box-shadow:
+    0px 8px 8px -4px var(--shadow-xl-1),
+    0px 20px 24px -4px var(--shadow-xl-2);
+}
+
+@mixin shadow-xxl {
+  box-shadow: 0px 24px 48px -12px var(--shadow-xxl);
+}
+
+@mixin shadow-up-m {
+  box-shadow:
+    0px -2px 4px -2px var(--shadow-up-m-1),
+    0px -4px 8px -2px var(--shadow-up-m-2);
+}
+
+@mixin shadow-up-l {
+  box-shadow:
+    0px -4px 6px -2px var(--shadow-up-l-1),
+    0px -12px 16px -4px var(--shadow-up-l-2);
+}

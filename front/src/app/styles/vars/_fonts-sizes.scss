@@ -1,0 +1,99 @@
+// Ссылка на Figma
+// https://www.figma.com/file/PnbjU3YyW6Y3C1lDIBrFmO/GateRevisor-Lib?type=design&node-id=11-172&mode=design&t=rWmcounYad7LNgaW-4
+
+$font-family-main: 'Inter', sans-serif;
+@mixin font-family-main {
+  font-family: $font-family-main;
+}
+
+@mixin font-weight-regular {
+  font-weight: 400;
+}
+
+@mixin font-weight-medium {
+  font-weight: 500;
+}
+
+@mixin font-weight-semi-bold {
+  font-weight: 600;
+}
+
+$font-size-h1: 24px;
+$font-line-h1: 32px;
+$font-h1: #{$font-size-h1} / #{$font-line-h1} #{$font-family-main};
+@mixin headline-1 {
+  font-size: $font-size-h1;
+  line-height: $font-line-h1;
+}
+
+$font-size-h2: 20px;
+$font-line-h2: 30px;
+$font-h2: #{$font-size-h2} / #{$font-line-h2} #{$font-family-main};
+@mixin headline-2 {
+  font-size: $font-size-h2;
+  line-height: $font-line-h2;
+}
+
+$font-size-h3: 18px;
+$font-line-h3: 28px;
+$font-h3: #{$font-size-h3} / #{$font-line-h3} #{$font-family-main};
+@mixin headline-3 {
+  font-size: $font-size-h3;
+  line-height: $font-line-h3;
+}
+
+$font-size-h4: 16px;
+$font-line-h4: 24px;
+$font-h4: #{$font-size-h4} / #{$font-line-h4} #{$font-family-main};
+@mixin headline-4 {
+  font-size: $font-size-h4;
+  line-height: $font-line-h4;
+}
+
+$font-size-body-m: 16px;
+$font-line-body-m: 24px;
+$font-body-m: #{$font-size-body-m} / #{$font-line-body-m} #{$font-family-main};
+@mixin body-m {
+  font-size: $font-size-body-m;
+  line-height: $font-line-body-m;
+}
+
+$font-size-body-s: 14px;
+$font-line-boyd-s: 20px;
+$font-body-s: #{$font-size-body-s} / #{$font-line-boyd-s} #{$font-family-main};
+@mixin body-s {
+  font-size: $font-size-body-s;
+  line-height: $font-line-boyd-s;
+}
+
+$font-size-body-xs: 12px;
+$font-line-boyd-xs: 18px;
+$font-body-xs: #{$font-size-body-xs} / #{$font-line-boyd-xs} #{$font-family-main};
+@mixin body-xs {
+  font-size: $font-size-body-xs;
+  line-height: $font-line-boyd-xs;
+}
+
+$font-size-button-m: 16px;
+$font-line-button-m: 24px;
+$font-button-m: 600 #{$font-size-button-m} / #{$font-line-button-m} #{$font-family-main};
+@mixin btn-m {
+  font-size: $font-size-button-m;
+  line-height: $font-line-button-m;
+}
+
+$font-size-button-s: 16px;
+$font-line-button-s: 24px;
+$font-button-s: 600 #{$font-size-button-s} / #{$font-line-button-s} #{$font-family-main};
+@mixin btn-s {
+  font-size: $font-size-button-s;
+  line-height: $font-line-button-s;
+}
+
+$font-size-button-xs: 14px;
+$font-line-button-xs: 20px;
+$font-button-xs: 600 #{$font-size-button-xs} / #{$font-line-button-xs} #{$font-family-main};
+@mixin btn-xs {
+  font-size: $font-size-button-xs;
+  line-height: $font-line-button-xs;
+}

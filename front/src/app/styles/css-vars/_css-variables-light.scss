@@ -1,0 +1,93 @@
+// Ссылка на фигму
+// https://www.figma.com/file/PnbjU3YyW6Y3C1lDIBrFmO/GateRevisor-Lib?type=design&node-id=1-57&mode=design&t=UW9uqVwh52SZGXwv-4
+
+@mixin css-variables-light {
+  // Background and surfaces
+  --background: #ffffff;
+  --surface-primary: #f2f4f7;
+  --surface-primary-hover: #eaecf0;
+  --surface-secondary: #f9fafb;
+  --surface-secondary-hover: #f2f4f7;
+  --surface-tetriary: #ffffff;
+  --surface-error: #fbe8e7;
+  --surface-warning: #fffaeb;
+  --surface-success: #ecfdf3;
+  --surface-accent: #f7cb15;
+  --surface-overlay: rgba(33, 37, 41, 0.75);
+
+  // Text
+  --text-primary: #212529;
+  --text-secondary: #828f9b;
+  --text-error: #f04438;
+  --text-warning: #fdb022;
+  --text-success: #12b76a;
+  --text-on-accent: #212529;
+
+  // Buttons Primary
+  --surface-btn-primary: #1570ef;
+  --surface-btn-primary-hover: #175cd3;
+  --text-on-btn-primary: #ffffff;
+  --icon-on-btn-primary: #ffffff;
+
+  // Buttons Secondary
+  --surface-btn-secondary: #f2f4f7;
+  --surface-btn-secondary-hover: #eaecf0;
+  --text-on-btn-secondary: #363d44;
+  --icon-on-btn-secondary: #363d44;
+
+  // Buttons Border
+  --surface-btn-border: #ffffff;
+  --text-on-btn-border: #363d44;
+  --icon-on-btn-border: #363d44;
+
+  // Borders & Deviders
+  --border-primary: #d0d5dd;
+  --border-primary-hover: #b8c0cc;
+  --border-active: #1570ef;
+  --border-error: #ef3124;
+  --border-warning: #fdb022;
+  --border-success: #12b76a;
+  --border-secondary: #e5e8eb;
+  --border-accent: #f7cb15;
+  --divider: #dce0e4;
+
+  // Icons
+  --icon-primary: #363d44;
+  --icon-primary-hover: #212529;
+  --icon-secondary: #828f9b;
+  --icon-secondary-hover: #49525b;
+  --icon-success: #12b76a;
+  --icon-warning: #fdb022;
+  --icon-error: #f04438;
+
+  // Controls
+  --control-active: #1570ef;
+  --icon-on-active: #ffffff;
+  --text-on-active: #ffffff;
+  --control-default: #f2f4f7;
+  --control-default-hover: #eaecf0;
+
+  // Tooltips
+  --tooltip-surface: #212529;
+  --text-on-tooltip: #ffffff;
+
+  // Other
+  --scrollbar: #eaecf0;
+  --logo: #1570ef;
+
+  // Shadows
+  --shadow-xs: rgba(33, 37, 41, 0.05);
+  --shadow-s-1: rgba(33, 37, 41, 0.1);
+  --shadow-s-2: rgba(33, 37, 41, 0.06);
+  --shadow-m-1: rgba(33, 37, 41, 0.06);
+  --shadow-m-2: rgba(33, 37, 41, 0.1);
+  --shadow-l-1: rgba(33, 37, 41, 0.03);
+  --shadow-l-2: rgba(33, 37, 41, 0.08);
+  --shadow-xl-1: rgba(33, 37, 41, 0.03);
+  --shadow-xl-2: rgba(33, 37, 41, 0.08);
+  --shadow-xxl: rgba(33, 37, 41, 0.18);
+  --shadow-up-m-1: rgba(33, 37, 41, 0.06);
+  --shadow-up-m-2: rgba(33, 37, 41, 0.1);
+  --shadow-up-l-1: rgba(33, 37, 41, 0.03);
+  --shadow-up-l-2: rgba(33, 37, 41, 0.08);
+}

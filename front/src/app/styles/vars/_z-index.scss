@@ -1,0 +1,7 @@
+@mixin modal-z-index {
+  z-index: 999;
+}
+
+@mixin global-loader-z-index {
+  z-index: 9999;
+}

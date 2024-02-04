@@ -1,0 +1,10 @@
+@import 'css-variables-dark';
+@import 'css-variables-light';
+
+:root {
+  @include css-variables-light;
+
+  &.dark {
+    @include css-variables-dark;
+  }
+}

@@ -1,0 +1,9 @@
+// переменные импортируются в vite.config.ts в additionalData
+// для того, чтобы к ним был доступ из любого компонента
+
+@import 'breakpoint';
+@import 'width';
+@import 'z-index';
+@import 'fonts-sizes';
+@import 'shadows';
+@import 'scroll';

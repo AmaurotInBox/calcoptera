@@ -1,0 +1,91 @@
+html,
+body {
+  @include font-family-main;
+  @include body-m;
+  @include font-weight-medium;
+
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  direction: ltr;
+  text-align: left;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  overflow: hidden;
+  color: var(--text-primary);
+}
+
+#app {
+  height: 100vh;
+}
+
+textarea,
+input {
+  @include font-family-main;
+  @include body-m;
+  @include font-weight-medium;
+
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input {
+  &::-webkit-contacts-auto-fill-button {
+    position: absolute;
+    right: 0;
+    display: none !important;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &::-webkit-textfield-decoration-container {
+    -webkit-appearance: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: none !important;
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+img,
+svg {
+  display: block;
+}
+
+img,
+a {
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+  -webkit-user-drag: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
