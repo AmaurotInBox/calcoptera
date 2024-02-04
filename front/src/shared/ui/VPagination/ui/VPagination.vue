@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-
 import { usePagination } from '../hooks/usePagination'
-
-import VBtn from '@/shared/ui/VBtn.vue'
-import ChevronIcon from '@/shared/icons/ChevronIcon.vue'
+import { VBtn } from '@/shared/ui/VBtn'
+import { ChevronIcon } from '@/shared/icons'
 
 interface IPaginationProps {
   modelValue: string | number
@@ -16,7 +14,7 @@ interface IPaginationEmits {
   (event: 'change', e: string | number): void
 }
 const props = withDefaults(defineProps<IPaginationProps>(), {
-  toShow: 1,
+  toShow: 1
 })
 const emit = defineEmits<IPaginationEmits>()
 
